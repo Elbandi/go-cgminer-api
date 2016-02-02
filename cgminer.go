@@ -35,6 +35,8 @@ type Summary struct {
 	Getworks               int64
 	HardwareErrors         int64   `json:"Hardware Errors"`
 	LocalWork              int64   `json:"Local Work"`
+	KHS5s                  float64 `json:"KHS 5s"`
+	KHSav                  float64 `json:"KHS av"`
 	MHS5s                  float64 `json:"MHS 5s"`
 	MHSav                  float64 `json:"MHS av"`
 	NetworkBlocks          int64   `json:"Network Blocks"`
@@ -60,6 +62,8 @@ type Devs struct {
 	MemoryClock            int64   `json:"Memory Clock"`
 	GPUVoltage            float64 `json:"GPU Voltage"`
 	Powertune              int64
+	KHSav                  float64 `json:"KHS av"`
+	KHS5s                  float64 `json:"KHS 5s"`
 	MHSav                  float64 `json:"MHS av"`
 	MHS5s                  float64 `json:"MHS 5s"`
 	Accepted               int64

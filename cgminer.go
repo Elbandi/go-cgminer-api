@@ -50,6 +50,7 @@ type Summary struct {
 
 type Devs struct {
 	ID                     int64
+	Name                   string
 	Enabled                string
 	Status                 string
 	Temperature            float64

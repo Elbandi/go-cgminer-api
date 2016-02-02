@@ -36,7 +36,7 @@ func Test_Devs(t *testing.T) {
 		return
 	}
 	for _, dev := range *devs {
-		fmt.Printf("Dev %d temp: %f\n", dev.GPU, dev.Temperature)
+		fmt.Printf("Dev %d temp: %f\n", dev.ID, dev.Temperature)
 	}
 }
 

@@ -49,7 +49,7 @@ type Summary struct {
 }
 
 type Devs struct {
-	GPU                    int64
+	ID                     int64
 	Enabled                string
 	Status                 string
 	Temperature            float64

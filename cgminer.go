@@ -22,7 +22,7 @@ type status struct {
 
 type Summary struct {
 	Accepted               int64
-	BestShare              int64   `json:"Best Share"`
+	BestShare              float64 `json:"Best Share"`
 	DeviceHardwarePercent  float64 `json:"Device Hardware%"`
 	DeviceRejectedPercent  float64 `json:"Device Rejected%"`
 	DifficultyAccepted     float64 `json:"Difficulty Accepted"`
@@ -74,7 +74,7 @@ type Devs struct {
 	LastSharePool          int64   `json:"Last Share Pool"`
 	LashShareTime          int64   `json:"Lash Share Time"`
 	TotalMH                float64 `json:"TotalMH"`
-	Diff1Work              int64   `json:"Diff1 Work"`
+	Diff1Work              float64 `json:"Diff1 Work"`
 	DifficultyAccepted     float64 `json:"Difficulty Accepted"`
 	DifficultyRejected     float64 `json:"Difficulty Rejected"`
 	LastShareDifficulty    float64 `json:"Last Share Difficulty"`
@@ -86,8 +86,8 @@ type Devs struct {
 
 type Pool struct {
 	Accepted               int64
-	BestShare              int64   `json:"Best Share"`
-	Diff1Shares            int64   `json:"Diff1 Shares"`
+	BestShare              float64 `json:"Best Share"`
+	Diff1Shares            float64 `json:"Diff1 Shares"`
 	DifficultyAccepted     float64 `json:"Difficulty Accepted"`
 	DifficultyRejected     float64 `json:"Difficulty Rejected"`
 	DifficultyStale        float64 `json:"Difficulty Stale"`

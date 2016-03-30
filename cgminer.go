@@ -74,6 +74,7 @@ type Devs struct {
 	LastSharePool          int64   `json:"Last Share Pool"`
 	LashShareTime          int64   `json:"Lash Share Time"`
 	TotalMH                float64 `json:"TotalMH"`
+	Frequency              float64 `json:"Frequency"`
 	Diff1Work              float64 `json:"Diff1 Work"`
 	DifficultyAccepted     float64 `json:"Difficulty Accepted"`
 	DifficultyRejected     float64 `json:"Difficulty Rejected"`

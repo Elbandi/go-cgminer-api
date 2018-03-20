@@ -5,12 +5,14 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
 	"net"
 	"strings"
 )
 
 type CGMiner struct {
 	server string
+	debug  bool
 }
 
 type status struct {
@@ -147,7 +149,14 @@ func New(hostname string, port int64) *CGMiner {
 	miner := new(CGMiner)
 	server := fmt.Sprintf("%s:%d", hostname, port)
 	miner.server = server
+	miner.debug = false
 
+	return miner
+}
+
+func NewDebug(hostname string, port int64, debug bool) *CGMiner {
+	miner := New(hostname, port)
+	miner.debug = debug
 	return miner
 }
 
@@ -176,12 +185,19 @@ func (miner *CGMiner) runCommand(command, argument string) (string, error) {
 		return "", err
 	}
 
+	if (miner.debug) {
+		log.Printf(">> %s\n", requestBody)
+	}
 	fmt.Fprintf(conn, "%s", requestBody)
 	result, err := bufio.NewReader(conn).ReadString('\x00')
 	if err != nil {
 		return "", err
 	}
-	return strings.TrimRight(result, "\x00"), nil
+	response := strings.TrimRight(result, "\x00")
+	if (miner.debug) {
+		log.Printf("<< %s\n", response)
+	}
+	return response, nil
 }
 
 // Devs returns basic information on the miner. See the Devs struct.
